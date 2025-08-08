@@ -1,9 +1,9 @@
-import Hero from '../components/Hero'
+import Praktikum from '../components/praktikum'
 
 export default function Home() {
   return (
     <main className="p-6">
-      <Hero />
+      <Praktikum />
     </main>
   )
 }
