@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
-//import PraktikumForm from '../form/PraktikumForm'
-//import PraktikumFormEdit from '../form/PraktikumFormEdit'
+//import JadwalForm from '../form/JadwalForm'
+//import JadwalFormEdit from '../form/JadwalFormEdit'
 
 export default function PraktikumPage() {
     const [list, setList] = useState([])

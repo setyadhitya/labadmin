@@ -6,8 +6,8 @@ export async function GET() {
   try {
     const [rows] = await db.query(`
       SELECT 
-        j.ID, j.Tanggal
-        p.Hari, p.Jam_Mulai, p.Mata_Kuliah, p.Jurusan, p.Catatan
+        j.ID, j.Tanggal, j.Catatan,
+        p.Hari, p.Jam_Mulai, p.Mata_Kuliah, p.Jurusan
       FROM tb_jadwal j
       JOIN tb_praktikum p ON j.ID_Praktikum = p.ID
     `);
