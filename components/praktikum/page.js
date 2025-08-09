@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
-import PraktikumForm from '../components/form/PraktikumForm'
-import PraktikumFormEdit from '../components/form/PraktikumFormEdit'
+import PraktikumForm from '../form/PraktikumForm'
+import PraktikumFormEdit from '../form/PraktikumFormEdit'
 
 export default function PraktikumPage() {
     const [list, setList] = useState([])
@@ -10,7 +10,7 @@ export default function PraktikumPage() {
     const [editingData, setEditingData] = useState(null)
 
     const loadData = async () => {
-        const res = await fetch('/api/praktikum')
+        const res = await fetch('api/praktikum')
         const data = await res.json()
         setList(data)
     }
@@ -38,7 +38,7 @@ export default function PraktikumPage() {
   if (!confirm('Hapus data ini?')) return;
   
   try {
-    const res = await fetch(`/api/praktikum/${id}`, { method: 'DELETE' });
+    const res = await fetch(`api/praktikum/${id}`, { method: 'DELETE' });
     const data = await res.json();
     console.log('Respon dari server:', data);
     loadData(); // reload data setelah delete
