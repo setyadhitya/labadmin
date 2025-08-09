@@ -60,16 +60,15 @@ export default function PraktikumPage() {
     }
   };
 
-  const handleLogout = async () => {
-    localStorage.removeItem('isLoggedIn');
-    localStorage.removeItem('role');
+const handleLogout = async () => {
     try {
       await fetch('/api/logout', { method: 'POST' });
     } catch (err) {
-      console.warn('logout API error:', err);
+      console.warn(err);
     }
     router.replace('/login');
   };
+  
 
   if (checking) {
     return (
